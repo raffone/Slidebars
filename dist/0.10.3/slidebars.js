@@ -214,7 +214,7 @@
 			// Open
 			function proceed() {
 				settings.onOpen();
-				$(document).trigger('slidebar.opening');
+				$(document).trigger('slidebars.opening');
 
 				if ( init && side === 'left' && $left ) { // Slidebars is initiated, left is in use and called to open.
 					$( 'html' ).addClass( 'sb-active sb-active-left' ); // Add active classes.
@@ -228,7 +228,7 @@
 					setTimeout( function () { rightActive = true; }, 400 ); // Set active variables.
 				}
 
-        setTimeout( function () { $(document).trigger('slidebar.open'); }, 400 ); // Set active variables.
+        setTimeout( function () { $(document).trigger('slidebars.open'); }, 400 ); // Set active variables.
 
 			}
 
@@ -248,10 +248,10 @@
 				}
 
 				settings.onClose();
-				$(document).trigger('slidebar.closing');
+				$(document).trigger('slidebars.closing');
 
 				setTimeout( function () { // Wait for closing animation to finish.
-				$(document).trigger('slidebar.closed');
+				$(document).trigger('slidebars.close');
 
 					$( 'html' ).removeClass( 'sb-active sb-active-left sb-active-right' ); // Remove active classes.
 					if ( $left ) $left.removeClass( 'sb-active' );
